@@ -1,0 +1,22 @@
+{
+  "name": "injectcss-webpack-plugin",
+  "version": "0.01",
+  "main": "index.js",
+  "author": "潘迪海 <2711002357@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.7.0",
+    "@types/rimraf": "^2.0.3",
+    "@types/webpack": "^4.41.4",
+    "css-loader": "^3.4.2",
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.1",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
