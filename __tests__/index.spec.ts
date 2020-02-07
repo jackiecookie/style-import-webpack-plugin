@@ -6,7 +6,6 @@ import rimraf from "rimraf";
 
 const OUTPUT_DIR = "dist";
 
-
 jest.setTimeout(300000);
 
 describe("test", () => {
@@ -14,9 +13,7 @@ describe("test", () => {
     rimraf(path.join(__dirname, OUTPUT_DIR), done);
   });
 
- 
-
-  function testPlugin(name, library, done) {
+  function testPlugin(name, library, done, expectModule) {
     const webpackConfig: webpack.Configuration = {
       name,
       mode: "none",
@@ -31,7 +28,7 @@ describe("test", () => {
       plugins: [
         new InjectCssWebpackPlugin({
           library: library,
-          style:"style"
+          style: "style"
         })
       ],
       module: {
@@ -53,23 +50,43 @@ describe("test", () => {
       const outputFileExists = fs.existsSync(outputFilePath);
       expect(outputFileExists).toBe(true);
       const content = fs.readFileSync(outputFilePath).toString();
-      //expect(content).toMatchSnapshot(name);
-      console.log(state.toString())
+      expect(content).toMatchSnapshot(name);
+      let { exist = [], notExist = [] } = expectModule;
+      let modules = state.compilation.modules;
+      debugger;
+      exist.every(existModule => {
+        let index = modules.findIndex(module => {
+          return new RegExp(existModule+'$').test(module.request)
+        });
+        expect(index).toBeGreaterThan(-1);
+      });
+
+      notExist.every(notexistModule => {
+        let index = modules.findIndex(module => {
+          return new RegExp(notexistModule+'$').test(module.request)
+        });
+        expect(index).toEqual(-1);
+      });
       done();
     });
   }
   const library = "./element";
   test("test normal import file", done => {
-    testPlugin("normalImportFile", library, done);
+    testPlugin("normalImportFile", library, done, {
+      exist: ["button.css", "message.css"]
+    });
   });
 
   test("test normal import file and get tree shaking ", done => {
-    testPlugin("normalImportWithTreeeShaking", library, done);
+    testPlugin("normalImportWithTreeeShaking", library, done, {
+      exist: ["button.css"],
+      notExist: ["message.css"]
+    });
   });
 
-
-  test("test dynamic import",done => {
-    testPlugin("dynamicImport", library, done);
-  })
-
+  test("test dynamic import", done => {
+    testPlugin("dynamicImport", library, done, {
+      exist: ["button.css", "message.css"]
+    });
+  });
 });

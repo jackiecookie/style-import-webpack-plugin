@@ -6,8 +6,6 @@ class DefinitionCollectParsePlugin {
   private name: string;
   private collectVariables: string[];
 
-  parse:object;
-
   constructor(collectVariables) {
     this.name = "DefinitionCollectParsePlugin";
     this.collectVariables = collectVariables;
@@ -18,8 +16,7 @@ class DefinitionCollectParsePlugin {
     this.currentScope = new StackedSetMap(this.currentScope || undefined);
   }
   //: webpack.compilation.normalModuleFactory.Parser
-  apply(parse) {
-    this.parse = parse;
+  apply(parse):DefinitionCollectParsePlugin {
     if (this.collectVariables && this.collectVariables.length) {
       parse.hooks.statement.tap(this.name, statement => {
         if (!this.collectVariables) {
@@ -37,6 +34,7 @@ class DefinitionCollectParsePlugin {
         }
       });
     }
+    return this;
   }
 
   dispose() {
