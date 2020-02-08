@@ -9,8 +9,6 @@ interface InjectCssWebpackPluginOptions {
   style: string | Function;
 }
 
-function noop() {}
-
 class InjectCssWebpackPlugin {
   private name: string;
 
@@ -46,10 +44,33 @@ class InjectCssWebpackPlugin {
       return styleRequest;
     }
 
+    function getVarValue(parser, name, expression, compilation) {
+      // new Parser from current parse
+      let itemModuleParser = new Parser(parser.options, parser.sourceType);
+      let definitionCollector = new DefinitionCollectParsePlugin([name]).apply(
+        itemModuleParser
+      );
+      itemModuleParser.hooks.importCall.tap(self.name, function(expr) {
+        if (expression.start === expr.start && expression.end === expr.end) {
+          //stop collect
+          definitionCollector.stop();
+        }
+      });
+      let module = parser.state.current;
+      itemModuleParser.parse(module._source.source(), {
+        current: module,
+        module,
+        compilation: compilation,
+        options: compilation.options
+      });
+      var val =  definitionCollector.get(name);
+      definitionCollector.dispose();
+      return val;
+    }
+
     compiler.hooks.compilation.tap(
       self.name,
       (compilation: any, { normalModuleFactory }) => {
-       
         compilation.hooks.succeedModule.tap(self.name, (module: any) => {
           if (module.dependencies && module.dependencies.length) {
             let importOrder = 0;
@@ -82,7 +103,6 @@ class InjectCssWebpackPlugin {
             });
           }
         });
-       
 
         normalModuleFactory.hooks.parser
           .for("javascript/auto")
@@ -94,17 +114,7 @@ class InjectCssWebpackPlugin {
               if (arg.type === "Literal") {
                 path = arg.value;
               } else if (arg.type === "Identifier") {
-                // new Parser from current parse
-                let itemModuleParser = new Parser(parser.options,parser.sourceType);
-                let definitionCollector = new DefinitionCollectParsePlugin([arg.name]).apply(itemModuleParser)
-                let module = parser.state.current;
-                itemModuleParser.parse(module._source.source(),{
-                      current: module, 
-                      module,
-                      compilation: compilation,
-                      options: compilation.options
-                })
-                path = definitionCollector.get(arg.name)
+                path = getVarValue(parser, arg.name, expression, compilation);
               }
               if (path && path.startsWith(options.library)) {
                 let name = /[^/]+$/g.exec(path)[0];
@@ -129,7 +139,7 @@ class InjectCssWebpackPlugin {
             // parser.hooks.call.for("require").tap(self.name, expr => {});
           });
 
-           // compilation.hooks.finishModules.tapPromise(self.name, (modules) => {
+        // compilation.hooks.finishModules.tapPromise(self.name, (modules) => {
         //   // let modules = compilation.modules;
         //   modules.forEach(module => {
         //     //find module need rebuild
@@ -142,7 +152,7 @@ class InjectCssWebpackPlugin {
         //       // but rebuild seems not good idea
         //       // https://stackoverflow.com/questions/35092183/webpack-plugin-how-can-i-modify-and-re-parse-a-module-after-compilation
         //       // module.parser.parse(module._source.source(), {
-        //       //   current: module, 
+        //       //   current: module,
         //       //   module,
         //       //   compilation: compilation,
         //       //   options: compilation.options

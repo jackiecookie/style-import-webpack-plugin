@@ -5,6 +5,8 @@ class DefinitionCollectParsePlugin {
   private currentScope: StackedSetMap;
   private name: string;
   private collectVariables: string[];
+  private currentScopeLastStatement:object;
+  private oldScope:object;
 
   constructor(collectVariables) {
     this.name = "DefinitionCollectParsePlugin";
@@ -13,7 +15,12 @@ class DefinitionCollectParsePlugin {
   }
 
   inScope() {
-    this.currentScope = new StackedSetMap(this.currentScope || undefined);
+    this.oldScope = this.currentScope;
+    this.currentScope = new StackedSetMap(this.currentScope.stack);
+  }
+  endScope(){
+    this.currentScope = this.oldScope;
+    this.oldScope = null;
   }
   //: webpack.compilation.normalModuleFactory.Parser
   apply(parse):DefinitionCollectParsePlugin {
@@ -24,6 +31,7 @@ class DefinitionCollectParsePlugin {
         }
         if (statement.type === "BlockStatement") {
           this.inScope();
+          this.currentScopeLastStatement = statement.body[statement.body.length-1]
         } else if (statement.type === "VariableDeclaration") {
             let declaration = statement.declarations[0];
             if(declaration.id.type === 'Identifier'&& declaration.init.type === 'Literal'){
@@ -32,13 +40,22 @@ class DefinitionCollectParsePlugin {
                 this.currentScope.set(varName,val)
             }
         }
+        if(this.currentScopeLastStatement && this.currentScopeLastStatement===statement){
+          this.endScope();
+        }
       });
     }
     return this;
   }
 
+  stop(){
+    this.collectVariables = null;
+  }
+
   dispose() {
     this.collectVariables = null;
+    this.oldScope = null;
+    this.currentScope = null;
   }
 
   get(identifier): string {

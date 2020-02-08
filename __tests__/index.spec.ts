@@ -13,7 +13,7 @@ describe("test", () => {
     rimraf(path.join(__dirname, OUTPUT_DIR), done);
   });
 
-  function testPlugin(name, library, done, expectModule) {
+  function testPlugin(name, library, done, expectModule, style = undefined) {
     const webpackConfig: webpack.Configuration = {
       name,
       mode: "none",
@@ -28,7 +28,7 @@ describe("test", () => {
       plugins: [
         new InjectCssWebpackPlugin({
           library: library,
-          style: "style"
+          style: style || "style"
         })
       ],
       module: {
@@ -53,17 +53,16 @@ describe("test", () => {
       expect(content).toMatchSnapshot(name);
       let { exist = [], notExist = [] } = expectModule;
       let modules = state.compilation.modules;
-      debugger;
       exist.every(existModule => {
         let index = modules.findIndex(module => {
-          return new RegExp(existModule+'$').test(module.request)
+          return new RegExp(existModule + "$").test(module.request);
         });
         expect(index).toBeGreaterThan(-1);
       });
 
       notExist.every(notexistModule => {
         let index = modules.findIndex(module => {
-          return new RegExp(notexistModule+'$').test(module.request)
+          return new RegExp(notexistModule + "$").test(module.request);
         });
         expect(index).toEqual(-1);
       });
@@ -72,9 +71,17 @@ describe("test", () => {
   }
   const library = "./element";
   test("test normal import file", done => {
-    testPlugin("normalImportFile", library, done, {
-      exist: ["button.css", "message.css"]
-    });
+    testPlugin(
+      "normalImportFile",
+      library,
+      done,
+      {
+        exist: ["button.css", "message.css"]
+      },
+      function style(rawRequest, name) {
+        return `${rawRequest}/style/${name.toLowerCase()}.css`;
+      }
+    );
   });
 
   test("test normal import file and get tree shaking ", done => {
@@ -86,6 +93,12 @@ describe("test", () => {
 
   test("test dynamic import", done => {
     testPlugin("dynamicImport", library, done, {
+      exist: ["button.css", "message.css"]
+    });
+  });
+
+  test("test dynamic import complex", done => {
+    testPlugin("dynamicImportComplex", library, done, {
       exist: ["button.css", "message.css"]
     });
   });
