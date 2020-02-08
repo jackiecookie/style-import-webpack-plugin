@@ -16,7 +16,7 @@ describe("test", () => {
   function testPlugin(name, library, done, expectModule, style = undefined) {
     const webpackConfig = {
       name,
-      mode: "none",
+      mode: "production",
       optimization: {
         usedExports: true
       },
