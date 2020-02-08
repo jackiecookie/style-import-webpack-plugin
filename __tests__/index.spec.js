@@ -1,8 +1,8 @@
-import webpack from "webpack";
-import InjectCssWebpackPlugin from "../lib/index";
-import path from "path";
-import fs from "fs";
-import rimraf from "rimraf";
+const webpack = require("webpack")
+const InjectCssWebpackPlugin = require("../lib/index");
+const path = require("path");
+const fs = require("fs");
+const rimraf = require("rimraf");
 
 const OUTPUT_DIR = "dist";
 
@@ -14,7 +14,7 @@ describe("test", () => {
   });
 
   function testPlugin(name, library, done, expectModule, style = undefined) {
-    const webpackConfig: webpack.Configuration = {
+    const webpackConfig = {
       name,
       mode: "none",
       optimization: {
