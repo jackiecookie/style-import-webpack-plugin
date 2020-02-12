@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test test dynamic import complex: dynamicImportComplex 1`] = `
+exports[`test test dynamic import complex: dynamicImportComplex.js 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -84,69 +84,50 @@ exports[`test test dynamic import complex: dynamicImportComplex 1`] = `
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = \\"./__tests__/support/dynamicImportComplex.js\\");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ \\"./__tests__/support/dynamicImportComplex.js\\":
+/*!***************************************************!*\\\\
+  !*** ./__tests__/support/dynamicImportComplex.js ***!
+  \\\\***************************************************/
+/*! exports provided: default */
+/*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_2__);
-// let name = './element/button'
-
-
-let name1 = './element/message';
-function a(){
-    let name = './element/button'
-    {
-        let name = './element/button2'
-    }
-    return {
-        components: {
-            'component': () => import(name),
-            'componenta': () => import(name1)
-        }
-    }
-    name = ''
-}
-
-/* harmony default export */ __webpack_exports__[\\"default\\"] = (a());
-                __webpack_exports__[\\"default\\"].beforeCreate = [function (context) {
-                  context =
-                      context ||
-                      (this.$vnode && this.$vnode.ssrContext) || // stateful
-                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-                  if(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-if(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-                }]
-          
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./__tests__/support/element/style/button.css */ \\\\\\"./__tests__/support/element/style/button.css\\\\\\");\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./__tests__/support/element/style/message.css */ \\\\\\"./__tests__/support/element/style/message.css\\\\\\");\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\n// let name = './element/button'\\\\n\\\\n\\\\nlet name1 = './element/message';\\\\nfunction a(){\\\\n    let name = './element/button'\\\\n    {\\\\n        let name = './element/button2'\\\\n    }\\\\n    return {\\\\n        components: {\\\\n            'component': () => import(name),\\\\n            'componenta': () => import(name1)\\\\n        }\\\\n    }\\\\n    name = ''\\\\n}\\\\n\\\\n/* harmony default export */ __webpack_exports__[\\\\\\"default\\\\\\"] = (a());\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/dynamicImportComplex.js?\\");
 
 /***/ }),
-/* 1 */
+
+/***/ \\"./__tests__/support/element/style/button.css\\":
+/*!****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/button.css ***!
+  \\\\****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".message{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".button{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/button.css?\\");
 
 /***/ }),
-/* 2 */
+
+/***/ \\"./__tests__/support/element/style/message.css\\":
+/*!*****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/message.css ***!
+  \\\\*****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".button{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".message{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/message.css?\\");
 
 /***/ })
-/******/ ]);"
+
+/******/ });"
 `;
 
-exports[`test test dynamic import: dynamicImport 1`] = `
+exports[`test test dynamic import: dynamicImport.js 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -230,59 +211,50 @@ exports[`test test dynamic import: dynamicImport 1`] = `
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = \\"./__tests__/support/dynamicImport.js\\");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ \\"./__tests__/support/dynamicImport.js\\":
+/*!********************************************!*\\\\
+  !*** ./__tests__/support/dynamicImport.js ***!
+  \\\\********************************************/
+/*! exports provided: default */
+/*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_2__);
-let name = './element/button'
-
-
-/* harmony default export */ __webpack_exports__[\\"default\\"] = ({
-    components: {
-        'component': () => import(name),
-        'componenta': () => import('./element/message')
-    }
-});
-                __webpack_exports__[\\"default\\"].beforeCreate = [function (context) {
-                  context =
-                      context ||
-                      (this.$vnode && this.$vnode.ssrContext) || // stateful
-                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-                  if(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-if(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-                }]
-          
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./__tests__/support/element/style/button.css */ \\\\\\"./__tests__/support/element/style/button.css\\\\\\");\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./__tests__/support/element/style/message.css */ \\\\\\"./__tests__/support/element/style/message.css\\\\\\");\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\nlet name = './element/button'\\\\n\\\\n\\\\n/* harmony default export */ __webpack_exports__[\\\\\\"default\\\\\\"] = ({\\\\n    components: {\\\\n        'component': () => import(name),\\\\n        'componenta': () => import('./element/message')\\\\n    }\\\\n});\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/dynamicImport.js?\\");
 
 /***/ }),
-/* 1 */
+
+/***/ \\"./__tests__/support/element/style/button.css\\":
+/*!****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/button.css ***!
+  \\\\****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".message{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".button{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/button.css?\\");
 
 /***/ }),
-/* 2 */
+
+/***/ \\"./__tests__/support/element/style/message.css\\":
+/*!*****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/message.css ***!
+  \\\\*****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".button{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".message{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/message.css?\\");
 
 /***/ })
-/******/ ]);"
+
+/******/ });"
 `;
 
-exports[`test test normal import file and get tree shaking : normalImportWithTreeeShaking 1`] = `
+exports[`test test normal import file and get tree shaking: normalImportWithTreeeShaking.js 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -366,79 +338,77 @@ exports[`test test normal import file and get tree shaking : normalImportWithTre
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = \\"./__tests__/support/normalImportWithTreeeShaking.js\\");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ \\"./__tests__/support/element/button.js\\":
+/*!*********************************************!*\\\\
+  !*** ./__tests__/support/element/button.js ***!
+  \\\\*********************************************/
+/*! exports provided: default */
+/*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_2__);
-// @ts-nocheck
-
-
-
-console.log(_element__WEBPACK_IMPORTED_MODULE_1__[/* Button */ \\"a\\"])   // only import button.css
-
-
-                __webpack_exports__[\\"default\\"].beforeCreate = [function (context) {
-                  context =
-                      context ||
-                      (this.$vnode && this.$vnode.ssrContext) || // stateful
-                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-                  if(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-                }]
-          
+eval(\\"\\\\nlet Button = 'Button'\\\\n/* harmony default export */ __webpack_exports__[\\\\\\"a\\\\\\"] = (Button);\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/button.js?\\");
 
 /***/ }),
-/* 1 */
+
+/***/ \\"./__tests__/support/element/index.js\\":
+/*!********************************************!*\\\\
+  !*** ./__tests__/support/element/index.js ***!
+  \\\\********************************************/
+/*! exports provided: Message, Button */
+/*! exports used: Button */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \\"a\\", function() { return _button__WEBPACK_IMPORTED_MODULE_0__[\\"a\\"]; });
-
-/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-
-
-
-
+eval(\\"/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button */ \\\\\\"./__tests__/support/element/button.js\\\\\\");\\\\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \\\\\\"a\\\\\\", function() { return _button__WEBPACK_IMPORTED_MODULE_0__[\\\\\\"a\\\\\\"]; });\\\\n\\\\n/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message */ \\\\\\"./__tests__/support/element/message.js\\\\\\");\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/index.js?\\");
 
 /***/ }),
-/* 2 */
+
+/***/ \\"./__tests__/support/element/message.js\\":
+/*!**********************************************!*\\\\
+  !*** ./__tests__/support/element/message.js ***!
+  \\\\**********************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-
-let Button = 'Button'
-/* harmony default export */ __webpack_exports__[\\"a\\"] = (Button);
+eval(\\"\\\\nlet Message = 'Message'\\\\n/* unused harmony default export */ var _unused_webpack_default_export = (Message);\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/message.js?\\");
 
 /***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-\\"use strict\\";
-
-let Message = 'Message'
-/* unused harmony default export */ var _unused_webpack_default_export = (Message);
-
-/***/ }),
-/* 4 */
+/***/ \\"./__tests__/support/element/style/button.css\\":
+/*!****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/button.css ***!
+  \\\\****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".button{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".button{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/button.css?\\");
+
+/***/ }),
+
+/***/ \\"./__tests__/support/normalImportWithTreeeShaking.js\\":
+/*!***********************************************************!*\\\\
+  !*** ./__tests__/support/normalImportWithTreeeShaking.js ***!
+  \\\\***********************************************************/
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./element */ \\\\\\"./__tests__/support/element/index.js\\\\\\");\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./__tests__/support/element/style/button.css */ \\\\\\"./__tests__/support/element/style/button.css\\\\\\");\\\\n/* harmony import */ var _Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_Users_pandihai_code_webpackPlugins_injectCss_webpack_plugin_tests_support_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\n// @ts-nocheck\\\\n\\\\n\\\\n\\\\nconsole.log(_element__WEBPACK_IMPORTED_MODULE_0__[/* Button */ \\\\\\"a\\\\\\"])   // only import button.css\\\\n\\\\n\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/normalImportWithTreeeShaking.js?\\");
 
 /***/ })
-/******/ ]);"
+
+/******/ });"
 `;
 
-exports[`test test normal import file: normalImportFile 1`] = `
+exports[`test test normal import file: normalImportFile.js 1`] = `
 "/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -522,88 +492,84 @@ exports[`test test normal import file: normalImportFile 1`] = `
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = \\"./__tests__/support/normalImportFile.js\\");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ \\"./__tests__/support/element/button.js\\":
+/*!*********************************************!*\\\\
+  !*** ./__tests__/support/element/button.js ***!
+  \\\\*********************************************/
+/*! exports provided: default */
+/*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
-/* harmony import */ var _element_style_button_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _element_style_button_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_element_style_button_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _element_style_message_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _element_style_message_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_element_style_message_css__WEBPACK_IMPORTED_MODULE_3__);
-// @ts-nocheck
-
-
-
-console.log(_element__WEBPACK_IMPORTED_MODULE_1__[/* Message */ \\"b\\"])
-console.log(_element__WEBPACK_IMPORTED_MODULE_1__[/* Button */ \\"a\\"])
-
-
-                __webpack_exports__[\\"default\\"].beforeCreate = [function (context) {
-                  context =
-                      context ||
-                      (this.$vnode && this.$vnode.ssrContext) || // stateful
-                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-                  if(_element_style_button_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _element_style_button_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-if(_element_style_button_css__WEBPACK_IMPORTED_MODULE_0__.__inject__){
-                _element_style_button_css__WEBPACK_IMPORTED_MODULE_0__.__inject__(context);
-            }
-                }]
-          
+eval(\\"\\\\nlet Button = 'Button'\\\\n/* harmony default export */ __webpack_exports__[\\\\\\"a\\\\\\"] = (Button);\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/button.js?\\");
 
 /***/ }),
-/* 1 */
+
+/***/ \\"./__tests__/support/element/index.js\\":
+/*!********************************************!*\\\\
+  !*** ./__tests__/support/element/index.js ***!
+  \\\\********************************************/
+/*! exports provided: Message, Button */
+/*! exports used: Button, Message */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \\"a\\", function() { return _button__WEBPACK_IMPORTED_MODULE_0__[\\"a\\"]; });
-
-/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \\"b\\", function() { return _message__WEBPACK_IMPORTED_MODULE_1__[\\"a\\"]; });
-
-
-
-
-
+eval(\\"/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button */ \\\\\\"./__tests__/support/element/button.js\\\\\\");\\\\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \\\\\\"a\\\\\\", function() { return _button__WEBPACK_IMPORTED_MODULE_0__[\\\\\\"a\\\\\\"]; });\\\\n\\\\n/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message */ \\\\\\"./__tests__/support/element/message.js\\\\\\");\\\\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \\\\\\"b\\\\\\", function() { return _message__WEBPACK_IMPORTED_MODULE_1__[\\\\\\"a\\\\\\"]; });\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/index.js?\\");
 
 /***/ }),
-/* 2 */
+
+/***/ \\"./__tests__/support/element/message.js\\":
+/*!**********************************************!*\\\\
+  !*** ./__tests__/support/element/message.js ***!
+  \\\\**********************************************/
+/*! exports provided: default */
+/*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 \\"use strict\\";
-
-let Message = 'Message'
-/* harmony default export */ __webpack_exports__[\\"a\\"] = (Message);
+eval(\\"\\\\nlet Message = 'Message'\\\\n/* harmony default export */ __webpack_exports__[\\\\\\"a\\\\\\"] = (Message);\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/message.js?\\");
 
 /***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-\\"use strict\\";
-
-let Button = 'Button'
-/* harmony default export */ __webpack_exports__[\\"a\\"] = (Button);
-
-/***/ }),
-/* 4 */
+/***/ \\"./__tests__/support/element/style/button.css\\":
+/*!****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/button.css ***!
+  \\\\****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".button{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".button{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/button.css?\\");
 
 /***/ }),
-/* 5 */
+
+/***/ \\"./__tests__/support/element/style/message.css\\":
+/*!*****************************************************!*\\\\
+  !*** ./__tests__/support/element/style/message.css ***!
+  \\\\*****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-// \\".message{\\\\n    color: red;\\\\n}\\"
+eval(\\"// \\\\\\".message{\\\\\\\\n    color: red;\\\\\\\\n}\\\\\\"\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/element/style/message.css?\\");
+
+/***/ }),
+
+/***/ \\"./__tests__/support/normalImportFile.js\\":
+/*!***********************************************!*\\\\
+  !*** ./__tests__/support/normalImportFile.js ***!
+  \\\\***********************************************/
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+eval(\\"__webpack_require__.r(__webpack_exports__);\\\\n/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./element */ \\\\\\"./__tests__/support/element/index.js\\\\\\");\\\\n/* harmony import */ var _element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./element/style/button.css */ \\\\\\"./__tests__/support/element/style/button.css\\\\\\");\\\\n/* harmony import */ var _element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_element_style_button_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\n/* harmony import */ var _element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE__ = __webpack_require__(/*! ./element/style/message.css */ \\\\\\"./__tests__/support/element/style/message.css\\\\\\");\\\\n/* harmony import */ var _element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE___default = /*#__PURE__*/__webpack_require__.n(_element_style_message_css__CSS__WEBPACK_IMPORTED_MODULE__);\\\\n// @ts-nocheck\\\\n\\\\n\\\\n\\\\nconsole.log(_element__WEBPACK_IMPORTED_MODULE_0__[/* Message */ \\\\\\"b\\\\\\"])\\\\nconsole.log(_element__WEBPACK_IMPORTED_MODULE_0__[/* Button */ \\\\\\"a\\\\\\"])\\\\n\\\\n\\\\n\\\\n//# sourceURL=webpack:///./__tests__/support/normalImportFile.js?\\");
 
 /***/ })
-/******/ ]);"
+
+/******/ });"
 `;

@@ -24,15 +24,15 @@ describe("test", () => {
     const webpackConfig = GetWebpackConfig(name, OUTPUT_DIR, { library, style }, __dirname)
     let outputFile = `${name}`;
     webpack(webpackConfig, (err, state) => {
-      if (err) {
-        throw err
-      }
-      console.log('state', state.toString())
+      // if (err) {
+      //   throw err
+      // }
+      // console.log('state', state.toString())
       let outputFilePath = path.join(__dirname, OUTPUT_DIR, outputFile);
       const outputFileExists = fs.existsSync(outputFilePath);
       expect(outputFileExists).toBe(true);
       const content = fs.readFileSync(outputFilePath).toString();
-      //  expect(content).toMatchSnapshot(name);
+       expect(content).toMatchSnapshot(name);
       let { exist = [], notExist = [] } = expectModule;
       let modules = state.compilation.modules;
       exist.every(existModule => {
