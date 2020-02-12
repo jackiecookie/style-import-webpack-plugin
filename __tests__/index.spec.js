@@ -66,7 +66,7 @@ describe("test", () => {
     );
   });
 
-  test("test normal import file and get tree shaking ", done => {
+  test("test normal import file and get tree shaking", done => {
     testPlugin("normalImportWithTreeeShaking.js", library, done, {
       exist: ["button.css"],
       notExist: ["message.css"]
