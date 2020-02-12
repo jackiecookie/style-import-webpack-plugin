@@ -1,5 +1,5 @@
 {
-  "name": "autoStyled-webpack-plugin",
+  "name": "style-import-webpack-plugin",
   "version": "1.0.1",
   "main": "lib/index.js",
   "author": "pandihai",
@@ -9,6 +9,9 @@
     "css-loader": "^3.4.2",
     "jest": "^25.1.0",
     "rimraf": "^3.0.1",
+    "vue-loader": "^15.8.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.41.5"
   },
   "scripts": {

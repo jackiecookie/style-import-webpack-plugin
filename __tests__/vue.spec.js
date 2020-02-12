@@ -2,8 +2,7 @@ const webpack = require("webpack")
 const path = require("path");
 const fs = require("fs");
 const rimraf = require("rimraf");
-const { GetWebpackConfig } = require("./config");
-const InjectCssWebpackPlugin = require("../lib/index");
+const { GetVueConfig } = require("./config");
 
 
 const OUTPUT_DIR = "dist";
@@ -15,19 +14,14 @@ describe("test", () => {
     rimraf(path.join(__dirname, OUTPUT_DIR), done);
   });
 
-
-  test("new plugin", () => {
-    expect(typeof (new InjectCssWebpackPlugin().apply)).toEqual("function")
-  })
-
-  function testPlugin(name, library, done, expectModule, style = "style") {
-    const webpackConfig = GetWebpackConfig(name, OUTPUT_DIR, { library, style }, __dirname)
-    let outputFile = `${name}`;
+  function testPlugin(name, done, expectModule, injectCssOptions = { style: "style" }) {
+    const webpackConfig = GetVueConfig(name, OUTPUT_DIR, injectCssOptions, __dirname)
+    let outputFile = `${name}.js`;
     webpack(webpackConfig, (err, state) => {
       if (err) {
         throw err
       }
-      console.log('state', state.toString())
+      console.log('object', state.toString());
       let outputFilePath = path.join(__dirname, OUTPUT_DIR, outputFile);
       const outputFileExists = fs.existsSync(outputFilePath);
       expect(outputFileExists).toBe(true);
@@ -51,37 +45,24 @@ describe("test", () => {
       done();
     });
   }
+
+
   const library = "./element";
-  test("test normal import file", done => {
+  test("test vue file", done => {
     testPlugin(
-      "normalImportFile.js",
-      library,
+      "test",
       done,
       {
-        exist: ["button.css", "message.css"]
+        exist: ["button.css"]
       },
-      function style(rawRequest, name) {
-        return `${rawRequest}/style/${name.toLowerCase()}.css`;
+      {
+        SSR:true,
+        library,
+        style: function style(rawRequest, name) {
+          return `${rawRequest}/style/${name.toLowerCase()}.css`;
+        }
       }
     );
   });
 
-  test("test normal import file and get tree shaking ", done => {
-    testPlugin("normalImportWithTreeeShaking.js", library, done, {
-      exist: ["button.css"],
-      notExist: ["message.css"]
-    });
-  });
-
-  test("test dynamic import", done => {
-    testPlugin("dynamicImport.js", library, done, {
-      exist: ["button.css", "message.css"]
-    });
-  });
-
-  test("test dynamic import complex", done => {
-    testPlugin("dynamicImportComplex.js", library, done, {
-      exist: ["button.css", "message.css"]
-    });
-  });
 });

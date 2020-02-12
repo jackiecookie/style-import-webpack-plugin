@@ -1,4 +1,4 @@
-# AutoStyledWebpackPlugin
+# style-import-webpack-plugin
 
 ![Build Status](https://travis-ci.org/jackiecookie/AutoStyledWebpackPlugin.svg?branch=master)  ![codecov](https://codecov.io/gh/jackiecookie/AutoStyledWebpackPlugin/graph/badge.svg)
 
@@ -9,10 +9,10 @@
 and then add the AutoStyledWebpackPlugin to the webpack config:
 
 ``` js
-var RewirePlugin = require("rewire-webpack");
+const InjectCssWebpackPlugin = require("style-import-webpack-plugin")
 var webpackConfig = {
     plugins: [
-        new RewirePlugin()
+        new InjectCssWebpackPlugin(options)
     ]
 };
 ```
