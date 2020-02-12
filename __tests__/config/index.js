@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 function GetWebpackConfig(name, output, injectCssOptions, dirname) {
     const webpackConfig = {
         name,
-        mode: "development",
+        mode: "production",
         optimization: {
             usedExports: true
         },
