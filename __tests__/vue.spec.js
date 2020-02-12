@@ -18,14 +18,14 @@ describe("test", () => {
     const webpackConfig = GetVueConfig(name, OUTPUT_DIR, injectCssOptions, __dirname)
     let outputFile = `${name}.js`;
     webpack(webpackConfig, (err, state) => {
-      if (err) {
-        throw err
-      }
-      console.log('object', state.toString());
+      // if (err) {
+      //   throw err
+      // }
+      // console.log('object', state.toString());
       let outputFilePath = path.join(__dirname, OUTPUT_DIR, outputFile);
       const outputFileExists = fs.existsSync(outputFilePath);
       expect(outputFileExists).toBe(true);
-      const content = fs.readFileSync(outputFilePath).toString();
+      // const content = fs.readFileSync(outputFilePath).toString();
       //  expect(content).toMatchSnapshot(name);
       let { exist = [], notExist = [] } = expectModule;
       let modules = state.compilation.modules;
