@@ -5,8 +5,8 @@
 <script>
 import { Button } from "./element";
 export default {
-  beforeCreate() {
-    console.log(Button);
+  beforeCreate(conetxt) {
+    conetxt.Button = Button
   }
 };
 </script>

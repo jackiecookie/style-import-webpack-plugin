@@ -21,6 +21,7 @@ var webpackConfig = {
 
 ```js
 {
+  "SSR": true,      // default:false
   "library": "element-ui",
   "style": "style"     // string | function   
 }
@@ -45,3 +46,4 @@ This repository is inspired by [babel-plugin-import](https://github.com/ant-desi
 1. Work with tree shaking, import on demand
 2. Support Async Components
 3. Does not modify js code, only append style modules on webpack dependency
+4. support server side render. if `options.SSR = true`, plugin will inject code for server side style render.
