@@ -1,6 +1,6 @@
 # style-import-webpack-plugin
 
-![Build Status](https://travis-ci.org/jackiecookie/AutoStyledWebpackPlugin.svg?branch=master)  ![codecov](https://codecov.io/gh/jackiecookie/AutoStyledWebpackPlugin/graph/badge.svg)
+![Build Status](https://travis-ci.org/jackiecookie/style-import-webpack-plugin.svg?branch=master)  ![codecov](https://codecov.io/gh/jackiecookie/AutoStyledWebpackPlugin/graph/badge.svg)
 
 ## Usage
 
